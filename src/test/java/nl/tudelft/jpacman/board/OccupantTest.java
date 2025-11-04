@@ -13,52 +13,53 @@ import org.junit.jupiter.api.Test;
  */
 class OccupantTest {
 
-//    /**
-//     * The unit under test.
-//     */
-//    private Unit unit;
-//
-//    /**
-//     * Resets the unit under test.
-//     */
-//    @BeforeEach
-//    void setUp() {
-//        unit = new BasicUnit();
-//    }
-//
-//    /**
-//     * Asserts that a unit has no square to start with.
-//     */
-//    @Test
-//    void noStartSquare() {
-//        assertThat(unit.hasSquare()).isFalse();
-//    }
-//
-//    /**
-//     * Tests that the unit indeed has the target square as its base after
-//     * occupation.
-//     */
-//    @Test
-//    void testOccupy() {
-//        Square square = new BasicSquare();
-//        unit.occupy(square);
-//        assertThat(unit.hasSquare()).isTrue();
-//        assertThat(unit.getSquare()).isEqualTo(square);
-//        assertThat(square.getOccupants()).contains(unit);
-//    }
-//
-//    /**
-//     * Test that the unit indeed has the target square as its base after
-//     * double occupation.
-//     */
-//    @Test
-//    void testReoccupy() {
-//        Square square = new BasicSquare(), square2 = new BasicSquare();
-//        unit.occupy(square);
-//        unit.occupy(square2);
-//        assertThat(unit.hasSquare()).isTrue();
-//        assertThat(unit.getSquare()).isEqualTo(square2);
-//        assertThat(square2.getOccupants()).contains(unit);
-//        assertThat(square.getOccupants()).doesNotContain(unit);
-//    }
+    /**
+     * The unit under test.
+     */
+    private Unit unit;
+
+    /**
+     * Resets the unit under test.
+     */
+    @BeforeEach
+    void setUp() {
+        unit = new BasicUnit();
+    }
+
+    /**
+     * Asserts that a unit has no square to start with.
+     */
+    @Test
+    void noStartSquare() {
+        assertThat(unit.hasSquare()).isFalse();
+    }
+
+    /**
+     * Tests that the unit indeed has the target square as its base after
+     * occupation.
+     */
+    @Test
+    void testOccupy() {
+        Square square = new BasicSquare();
+        unit.occupy(square);
+        assertThat(unit.hasSquare()).isTrue();
+        assertThat(unit.getSquare()).isEqualTo(square);
+        assertThat(square.getOccupants()).contains(unit);
+    }
+
+    /**
+     * Test that the unit indeed has the target square as its base after
+     * double occupation.
+     */
+    @Test
+    void testReoccupy() {
+        Square square = new BasicSquare();
+        Square square2 = new BasicSquare();
+        unit.occupy(square);
+        unit.occupy(square2);
+        assertThat(unit.hasSquare()).isTrue();
+        assertThat(unit.getSquare()).isEqualTo(square2);
+        assertThat(square2.getOccupants()).contains(unit);
+        assertThat(square.getOccupants()).doesNotContain(unit);
+    }
 }
