@@ -28,4 +28,4 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: xvfb-run ./gradlew build && cat /home/runner/work/jpacman/jpacman/build/reports/pmd/test.html
+      run: xvfb-run ./gradlew build
