@@ -29,3 +29,5 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: xvfb-run ./gradlew build
+    - name: pmd report
+      run: cat /home/runner/work/jpacman/jpacman/build/reports/pmd/test.html
